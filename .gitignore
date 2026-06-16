@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+venv/
+env/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# Node.js (Frontend)
+craft-castle-frontend/node_modules/
+craft-castle-frontend/dist/
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
