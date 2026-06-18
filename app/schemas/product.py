@@ -4,7 +4,7 @@ from datetime import datetime
 from decimal import Decimal
 import re
 
-from app.schemas.media import MediaResponse
+from schemas.media import MediaResponse
 
 
 # ── Helpers ──────────────────────────────────

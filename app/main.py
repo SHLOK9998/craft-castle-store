@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.config import get_settings
-from app.auth.router import router as auth_router
-from app.routes.categories import router as categories_router
-from app.routes.products import router as products_router
-from app.routes.media import router as media_router
-from app.routes.dashboard import router as dashboard_router
-from app.routes.whatsapp import router as whatsapp_router
+from config import get_settings
+from auth.router import router as auth_router
+from routes.categories import router as categories_router
+from routes.products import router as products_router
+from routes.media import router as media_router
+from routes.dashboard import router as dashboard_router
+from routes.whatsapp import router as whatsapp_router
 
 settings = get_settings()
 

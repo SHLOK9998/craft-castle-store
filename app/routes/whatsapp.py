@@ -2,9 +2,9 @@ from fastapi import APIRouter, Query
 from typing import Optional
 import urllib.parse
 
-from app.config import get_settings
-from app.database import get_supabase
-from app.models import product as ProductModel
+from config import get_settings
+from database import get_supabase
+from models import product as ProductModel
 
 router = APIRouter(prefix="/whatsapp", tags=["WhatsApp"])
 settings = get_settings()
@@ -42,7 +42,7 @@ def get_order_url(product_id: int, quantity: Optional[int] = Query(1, ge=1)):
     effective_price = product["discounted_price"] or product["price"]
 
     # Fetch product primary image or first image
-    from app.models import media as MediaModel
+    from models import media as MediaModel
     media_result = (
         db.table(MediaModel.TABLE_NAME)
         .select("media_url")

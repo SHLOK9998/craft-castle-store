@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
-from app.database import get_supabase_admin
-from app.models import product as ProductModel
-from app.models import category as CategoryModel
-from app.models import media as MediaModel
-from app.auth.utils import get_current_admin
+from database import get_supabase_admin
+from models import product as ProductModel
+from models import category as CategoryModel
+from models import media as MediaModel
+from auth.utils import get_current_admin
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 

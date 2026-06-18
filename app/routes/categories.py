@@ -1,14 +1,14 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 
-from app.database import get_supabase, get_supabase_admin
-from app.models import category as CategoryModel
-from app.schemas.category import (
+from database import get_supabase, get_supabase_admin
+from models import category as CategoryModel
+from schemas.category import (
     CategoryCreate,
     CategoryUpdate,
     CategoryResponse,
     CategoryListResponse,
 )
-from app.auth.utils import get_current_admin
+from auth.utils import get_current_admin
 
 router = APIRouter(prefix="/categories", tags=["Categories"])
 

@@ -6,12 +6,12 @@ from typing import Optional
 import cloudinary
 import cloudinary.uploader
 
-from app.database import get_supabase, get_supabase_admin
-from app.models import media as MediaModel
-from app.models import product as ProductModel
-from app.schemas.media import MediaResponse, MediaReorderRequest
-from app.auth.utils import get_current_admin
-from app.config import get_settings
+from database import get_supabase, get_supabase_admin
+from models import media as MediaModel
+from models import product as ProductModel
+from schemas.media import MediaResponse, MediaReorderRequest
+from auth.utils import get_current_admin
+from config import get_settings
 
 router = APIRouter(prefix="/media", tags=["Media"])
 settings = get_settings()

@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Query
 from typing import Optional
 
-from app.database import get_supabase, get_supabase_admin
-from app.models import product as ProductModel
-from app.models import media as MediaModel
-from app.schemas.product import (
+from database import get_supabase, get_supabase_admin
+from models import product as ProductModel
+from models import media as MediaModel
+from schemas.product import (
     ProductCreate,
     ProductUpdate,
     StockUpdate,
@@ -12,9 +12,9 @@ from app.schemas.product import (
     ProductDetailResponse,
     ProductListResponse,
 )
-from app.schemas.media import MediaResponse
-from app.auth.utils import get_current_admin
-from app.config import get_settings
+from schemas.media import MediaResponse
+from auth.utils import get_current_admin
+from config import get_settings
 
 router = APIRouter(prefix="/products", tags=["Products"])
 settings = get_settings()

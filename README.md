@@ -11,7 +11,7 @@ FastAPI backend for the Craft Castle handmade rakhi store.
 ```bash
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r app/requirements.txt
 ```
 
 ### 2. Setup Supabase
@@ -30,7 +30,8 @@ cp .env.example .env
 
 ### 4. Generate your admin password hash
 ```bash
-uvicorn app.main:app --reload
+cd app
+uvicorn main:app --reload
 # POST http://localhost:8000/auth/hash-password
 # Body: {"password": "your_chosen_password"}
 # Copy the returned hash into .env as ADMIN_PASSWORD
@@ -43,7 +44,8 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 ### 6. Run
 ```bash
-uvicorn app.main:app --reload
+cd app
+uvicorn main:app --reload
 # Swagger UI: http://localhost:8000/docs
 ```
 
@@ -135,7 +137,7 @@ app/
 2. Go to [render.com](https://render.com) → New Web Service
 3. Connect your repo
 4. Set:
-   - **Build command:** `pip install -r requirements.txt`
-   - **Start command:** `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - **Build command:** `pip install -r app/requirements.txt`
+   - **Start command:** `uvicorn main:app --host 0.0.0.0 --port $PORT --app-dir app`
 5. Add all `.env` values as Environment Variables in Render dashboard
 6. Update CORS `allow_origins` in `main.py` with your Vercel frontend URL
