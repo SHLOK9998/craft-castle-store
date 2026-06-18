@@ -13,7 +13,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-[#f5eae6] dark:bg-[#1f1514] text-cf-on-surface pt-12 pb-6 border-t border-cf-gold/20">
+    <footer className="bg-[#f5eae6] dark:bg-[#1f1514] text-cf-on-surface pt-7 sm:pt-9 pb-3 sm:pb-5 border-t border-cf-gold/20">
       <div className="max-w-container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 md:gap-y-0 mb-10 items-start">
           
@@ -139,7 +139,7 @@ export function Footer() {
         {/* Divider with simple leaf ornament */}
         <div className="flex items-center justify-center my-6">
           <div className="h-[1px] bg-cf-gold/30 flex-1"></div>
-          <div className="mx-3 text-[10px] text-cf-gold">♦</div>
+          <div className="mx-4 text-xs text-[#D4AF37] select-none">✦ 🪷 ✦</div>
           <div className="h-[1px] bg-cf-gold/30 flex-1"></div>
         </div>
  

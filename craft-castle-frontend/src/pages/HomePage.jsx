@@ -180,7 +180,7 @@ export function HomePage() {
         {/* Custom gold dot divider line */}
         <div className="flex items-center justify-center my-3 sm:my-6">
           <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-cf-gold/70 mx-3"></div>
+          <div className="mx-4 text-xs text-[#D4AF37] select-none">✦ 🪷 ✦</div>
           <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
         </div>
 

@@ -118,7 +118,7 @@ export function ProductDetailPage() {
     <div className="min-h-screen bg-[#FAF5EC] dark:bg-[#1e1210] transition-colors duration-200">
       <Header />
       
-      <div className="max-w-container mx-auto px-4 sm:px-6 pt-3.5 pb-8 sm:py-8">
+      <div className="max-w-container mx-auto px-4 sm:px-6 pt-3.5 pb-6 sm:pb-8">
         
         {/* Back Button */}
         <button
@@ -302,7 +302,7 @@ export function ProductDetailPage() {
         </div>
 
         {/* Ornate Divider with leaf */}
-        <div className="flex items-center justify-center my-10">
+        <div className="flex items-center justify-center mt-12 mb-8 sm:mt-16 sm:mb-10">
           <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
           <div className="mx-4 text-xs text-[#D4AF37] select-none">✦ 🪷 ✦</div>
           <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
@@ -310,7 +310,7 @@ export function ProductDetailPage() {
 
         {/* Recommendations Grid ("You May Also Like") */}
         {recommendations.length > 0 && (
-          <section className="mb-8">
+          <section className="mb-4">
             <div className="flex items-baseline justify-between mb-6">
               <div>
                 <h3 className="font-playfair text-xl sm:text-2xl font-bold text-cf-on-surface mb-1">

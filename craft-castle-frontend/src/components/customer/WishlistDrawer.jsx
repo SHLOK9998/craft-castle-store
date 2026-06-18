@@ -167,7 +167,7 @@ export function WishlistDrawer({ isOpen, onClose }) {
                     {index < products.length - 1 && (
                       <div className="flex items-center justify-center my-2.5">
                         <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
-                        <div className="w-1 h-1 rounded-full bg-[#D4AF37]/80 mx-2"></div>
+                        <div className="mx-2.5 text-[10px] text-[#D4AF37] select-none">✦ 🪷 ✦</div>
                         <div className="h-[1px] bg-cf-gold/15 flex-1"></div>
                       </div>
                     )}
