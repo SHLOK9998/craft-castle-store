@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useCart } from '../../context/CartContext'
 import { Icon } from '../shared/Icon'
+import { getContactUrl } from '../../api/whatsapp'
 
 // Helper to generate matching subtitles
 function getSubtext(name) {
@@ -18,11 +19,10 @@ export function CartDrawer({ isOpen, onClose }) {
 
   // Fetch the WhatsApp number from backend on mount
   useEffect(() => {
-    fetch('/api/whatsapp/contact-url')
-      .then(res => res.json())
-      .then(data => {
-        if (data.number) {
-          setWaNumber(data.number)
+    getContactUrl()
+      .then(res => {
+        if (res.data.number) {
+          setWaNumber(res.data.number)
         }
       })
       .catch(err => console.error('Failed to load WhatsApp contact:', err))

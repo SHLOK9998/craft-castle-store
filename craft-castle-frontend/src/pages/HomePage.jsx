@@ -7,6 +7,7 @@ import { LoadingSpinner } from '../components/shared/LoadingSpinner'
 import { EmptyState } from '../components/shared/EmptyState'
 import { getProducts, getFeaturedProducts } from '../api/products'
 import { getCategories } from '../api/categories'
+import { getContactUrl } from '../api/whatsapp'
 import { Icon } from '../components/shared/Icon'
 import { useWishlist } from '../context/WishlistContext'
 import { Footer } from '../components/customer/Footer'
@@ -130,9 +131,8 @@ export function HomePage() {
                   e.preventDefault()
                   const customMsg = "Namaste! I saw your beautiful collection on the home page and want to know more about ordering your Rakhi products."
                   try {
-                    const res = await fetch(`/api/whatsapp/contact-url?message=${encodeURIComponent(customMsg)}`)
-                    const data = await res.json()
-                    window.open(data.whatsapp_url, '_blank')
+                    const res = await getContactUrl(customMsg)
+                    window.open(res.data.whatsapp_url, '_blank')
                   } catch {
                     window.open(`https://wa.me/919998931393?text=${encodeURIComponent(customMsg)}`, '_blank')
                   }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../shared/Icon'
+import { getContactUrl } from '../../api/whatsapp'
 
 export function Footer() {
   const handleShare = (e) => {
@@ -157,9 +158,8 @@ export function Footer() {
           e.preventDefault()
           const customMsg = "Hello! I'm browsing your Rakhi store right now and need some guidance or help with a product."
           try {
-            const res = await fetch(`/api/whatsapp/contact-url?message=${encodeURIComponent(customMsg)}`)
-            const data = await res.json()
-            window.open(data.whatsapp_url, '_blank')
+            const res = await getContactUrl(customMsg)
+            window.open(res.data.whatsapp_url, '_blank')
           } catch {
             window.open(`https://wa.me/919998931393?text=${encodeURIComponent(customMsg)}`, '_blank')
           }
