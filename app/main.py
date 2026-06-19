@@ -8,7 +8,7 @@ from routes.products import router as products_router
 from routes.media import router as media_router
 from routes.dashboard import router as dashboard_router
 from routes.whatsapp import router as whatsapp_router
-
+from fastapi import Response
 settings = get_settings()
 
 app = FastAPI(
@@ -50,6 +50,10 @@ def root():
         "status": "running 🎀",
         "docs": "/docs",
     }
+
+@app.head("/health")
+def health_head():
+    return Response(status_code=200)
 
 @app.get("/health", tags=["Health"])
 def health():
