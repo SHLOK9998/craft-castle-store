@@ -217,7 +217,7 @@ _Love and light!_`
                             >
                               −
                             </button>
-                            <span className="px-2 text-xs font-semibold select-none w-5 text-center">
+                            <span className="text-xs font-semibold select-none w-8 text-center">
                               {String(item.quantity).padStart(2, '0')}
                             </span>
                             <button 

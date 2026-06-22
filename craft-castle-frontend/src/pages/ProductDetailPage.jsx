@@ -246,7 +246,7 @@ export function ProductDetailPage() {
                   >
                     −
                   </button>
-                  <span className="px-2 text-sm font-semibold text-cf-on-surface w-6 text-center select-none">
+                  <span className="text-sm font-semibold text-cf-on-surface w-8 text-center select-none">
                     {qty}
                   </span>
                   <button 
