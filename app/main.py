@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import get_settings
@@ -8,6 +8,9 @@ from routes.products import router as products_router
 from routes.media import router as media_router
 from routes.dashboard import router as dashboard_router
 from routes.whatsapp import router as whatsapp_router
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from limiter import limiter
 from fastapi import Response
 settings = get_settings()
 
@@ -19,6 +22,19 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+# ── Security Headers ──────────────────────────
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    return response
+
+# ── Rate Limiter ──────────────────────────────
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 # ── CORS ──────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
@@ -28,8 +44,8 @@ app.add_middleware(
         "https://craft-castle-store.vercel.app",
     ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE", "HEAD"],
+    allow_headers=["Authorization", "Content-Type"],
 )
 
 # ── Routers ───────────────────────────────────

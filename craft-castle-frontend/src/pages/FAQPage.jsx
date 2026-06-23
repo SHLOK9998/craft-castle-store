@@ -30,7 +30,7 @@ export function FAQPage() {
     {
       category: 'ordering',
       question: 'Can I place an order directly on WhatsApp without using the website?',
-      answer: 'Yes, absolutely! You can send screenshot images of products you like or simply list the items you wish to purchase directly to our WhatsApp support number: +91 99989 31393.',
+      answer: 'Yes, absolutely! You can send screenshot images of products you like or simply list the items you wish to purchase directly to our WhatsApp support number: +91 87340 42595.',
     },
     {
       category: 'payment',
@@ -163,7 +163,7 @@ export function FAQPage() {
             We are online! Send us your query on WhatsApp and get an answer in minutes.
           </p>
           <a
-            href="https://wa.me/919998931393?text=Hi%20CraftCastle%2C%20I%20have%20a%20question%20regarding%20my%20order."
+            href="https://wa.me/918734042595?text=Hi%20CraftCastle%2C%20I%20have%20a%20question%20regarding%20my%20order."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition-colors shadow-sm"

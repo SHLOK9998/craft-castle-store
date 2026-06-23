@@ -1,10 +1,11 @@
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi import Depends
 from pydantic import BaseModel
 
 from config import get_settings
 from auth.utils import verify_password, create_access_token, hash_password
+from limiter import limiter
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 settings = get_settings()
@@ -20,7 +21,8 @@ class PasswordHashRequest(BaseModel):
 
 
 @router.post("/login", response_model=TokenResponse)
-def login(form_data: OAuth2PasswordRequestForm = Depends()):
+@limiter.limit("5/minute")
+def login(request: Request, form_data: OAuth2PasswordRequestForm = Depends()):
     """
     Admin login. Returns a JWT token.
     Use this token in Authorization: Bearer <token> header for admin routes.
@@ -51,4 +53,9 @@ def hash_password_util(body: PasswordHashRequest):
     Utility endpoint to generate a bcrypt hash of your password.
     Use this ONCE to set up your admin password, then remove or protect this endpoint.
     """
+    if not settings.DEBUG:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This endpoint is disabled in production.",
+        )
     return {"hashed_password": hash_password(body.password)}

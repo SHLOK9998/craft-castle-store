@@ -42,7 +42,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/919998931393"
+                href="https://wa.me/918734042595"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full border border-cf-gold/40 flex items-center justify-center hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-colors"
@@ -161,7 +161,7 @@ export function Footer() {
             const res = await getContactUrl(customMsg)
             window.open(res.data.whatsapp_url, '_blank')
           } catch {
-            window.open(`https://wa.me/919998931393?text=${encodeURIComponent(customMsg)}`, '_blank')
+            window.open(`https://wa.me/918734042595?text=${encodeURIComponent(customMsg)}`, '_blank')
           }
         }}
         className="fixed bottom-5 right-5 z-50 bg-[#25D366] text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-green-600 transition-colors shadow-lg flex items-center gap-2"

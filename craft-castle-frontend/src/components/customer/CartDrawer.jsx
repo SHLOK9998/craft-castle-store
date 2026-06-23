@@ -15,7 +15,7 @@ function getSubtext(name) {
 
 export function CartDrawer({ isOpen, onClose }) {
   const { cart, updateQuantity, removeFromCart, clearCart, cartSubtotal } = useCart()
-  const [waNumber, setWaNumber] = useState('919998931393')
+  const [waNumber, setWaNumber] = useState('918734042595')
 
   // Fetch the WhatsApp number from backend on mount
   useEffect(() => {

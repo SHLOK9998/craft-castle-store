@@ -27,7 +27,7 @@ export function HowToOrderPage() {
     {
       step: '03',
       title: 'Connect on WhatsApp',
-      description: 'Click "Checkout via WhatsApp" from your cart. You will be redirected to our WhatsApp Support (+91 99989 31393) with a pre-filled message of your order details.',
+      description: 'Click "Checkout via WhatsApp" from your cart. You will be redirected to our WhatsApp Support (+91 87340 42595) with a pre-filled message of your order details.',
       icon: 'chat',
     },
     {
@@ -120,7 +120,7 @@ export function HowToOrderPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/919998931393?text=Hi%20CraftCastle%2C%20I%27d%20like%20to%20place%20an%20order%20directly."
+              href="https://wa.me/918734042595?text=Hi%20CraftCastle%2C%20I%27d%20like%20to%20place%20an%20order%20directly."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition-colors shadow-sm"

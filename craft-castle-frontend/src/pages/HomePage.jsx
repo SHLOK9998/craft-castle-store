@@ -134,7 +134,7 @@ export function HomePage() {
                     const res = await getContactUrl(customMsg)
                     window.open(res.data.whatsapp_url, '_blank')
                   } catch {
-                    window.open(`https://wa.me/919998931393?text=${encodeURIComponent(customMsg)}`, '_blank')
+                    window.open(`https://wa.me/918734042595?text=${encodeURIComponent(customMsg)}`, '_blank')
                   }
                 }}
                 className="bg-[#25D366] hover:bg-[#20ba56] text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg flex items-center gap-1.5 sm:gap-2 shadow-md transition-colors"
