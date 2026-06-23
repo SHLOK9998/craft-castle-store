@@ -32,9 +32,9 @@ export function HowToOrderPage() {
     },
     {
       step: '04',
-      title: 'Confirm & Customise',
-      description: 'Share your delivery address, request custom gift notes, or add personalized card tags directly with our friendly support team on chat.',
-      icon: 'edit_note',
+      title: 'Confirm Adress',
+      description: 'Share your delivery address directly with our friendly support team on chat.',
+      icon: 'address_note',
     },
     {
       step: '05',
@@ -45,7 +45,7 @@ export function HowToOrderPage() {
     {
       step: '06',
       title: 'Gift Packaging & Dispatch',
-      description: 'Your Rakhis are packaged in festive, eco-friendly gift boxes and dispatched. We will send the courier tracking link directly to your WhatsApp.',
+      description: 'Your Rakhis are packaged in festive, eco-friendly cards and dispatched. We will send the courier tracking link directly to your WhatsApp.',
       icon: 'local_shipping',
     },
   ]
@@ -109,6 +109,26 @@ export function HowToOrderPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Offline Purchase Section */}
+        <div className="bg-white dark:bg-[#2c1e1b] rounded-xl border border-cf-gold/20 p-6 md:p-8 text-center mb-8">
+          <div className="w-12 h-12 rounded-full bg-cf-primary/10 flex items-center justify-center mx-auto mb-4">
+            <Icon name="storefront" size={24} className="text-cf-primary" />
+          </div>
+          <h3 className="font-playfair font-bold text-cf-primary text-base sm:text-lg mb-2">
+            Purchase Offline (Store Address)
+          </h3>
+          <p className="text-xs text-cf-outline/90 max-w-lg mx-auto leading-relaxed mb-4">
+            If you reside in Ahmedabad or would like to visit us to purchase Rakhis directly, feel free to visit our offline address:
+          </p>
+          <div className="bg-[#FAF5EC] dark:bg-[#1e1210]/50 border border-cf-gold/15 rounded-lg p-4 max-w-md mx-auto inline-block">
+            <p className="text-xs font-semibold text-cf-on-surface leading-relaxed">
+              40, Uttar Gujrat Panchal Society,<br />
+              Nr. Swagat Hall, Ranip Post Office,<br />
+              Ranip, Ahmedabad, Gujarat - 382480
+            </p>
           </div>
         </div>
 

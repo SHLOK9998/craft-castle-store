@@ -128,9 +128,13 @@ export function Footer() {
                   +91 87340 42595
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Icon name="location_on" size={14} className="text-cf-primary shrink-0" />
-                <span>Ahmedabad, Gujarat</span>
+              <li className="flex items-start gap-2.5">
+                <Icon name="location_on" size={14} className="text-cf-primary shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  40, Uttar Gujrat Panchal Society,<br />
+                  Nr. Swagat Hall, Ranip Post Office,<br />
+                  Ranip, Ahmedabad, Gujarat - 382480
+                </span>
               </li>
             </ul>
           </div>

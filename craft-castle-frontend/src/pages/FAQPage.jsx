@@ -35,7 +35,7 @@ export function FAQPage() {
     {
       category: 'payment',
       question: 'What payment methods do you accept?',
-      answer: 'We support all major payment methods in India, including UPI (GPay, PhonePe, Paytm, BHIM), Net Banking, and direct Bank Transfer. We will provide our secure payment credentials during our WhatsApp chat.',
+      answer: 'We support all major payment methods in India, including UPI (GPay, PhonePe, Paytm, BHIM) and Cash. We will provide our secure payment credentials during our WhatsApp chat.',
     },
     {
       category: 'payment',
@@ -45,12 +45,12 @@ export function FAQPage() {
     {
       category: 'shipping',
       question: 'What are the shipping charges?',
-      answer: 'We offer free delivery across India on orders above ₹499. For orders below ₹499, a nominal flat shipping fee of ₹50 is charged.',
+      answer: 'That will be calculated and informed to you on the time of booking on whatsapp according to your address .',
     },
     {
       category: 'shipping',
       question: 'How long does shipping and delivery take?',
-      answer: 'Orders within Gujarat are delivered in 2–3 business days. Deliveries to major cities in India take 3–5 business days, while other regions take 5–7 business days.',
+      answer: 'It is purely depends on the courier or post-office availability in your location .',
     },
     {
       category: 'shipping',
@@ -60,12 +60,12 @@ export function FAQPage() {
     {
       category: 'products',
       question: 'Can I customize my Rakhi or add a personal gift note?',
-      answer: 'Yes! We offer personalization services. You can add custom name initials/alphabet charms to selected Rakhis and request a handwritten gift message. Let us know your requirements on WhatsApp during booking.',
+      answer: 'Yes! We offer personalization services. You can add customization in the design like add more beads or color etc according to your requirements. Let us know your requirements on WhatsApp during booking.',
     },
     {
       category: 'products',
       question: 'Are the materials eco-friendly and skin-safe?',
-      answer: 'Absolutely. We use high-quality materials including pure cotton threads, organic silk threads, semi-precious beads, and non-toxic dyes. They are entirely skin-friendly and safe for kids.',
+      answer: 'Absolutely. We use high-quality materials including pure cotton threads, semi-precious beads, and non-toxic dyes. They are entirely skin-friendly and safe for kids.',
     },
     {
       category: 'products',
