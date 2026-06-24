@@ -69,7 +69,18 @@ export function Footer() {
             </div>
             <ul className="space-y-2.5 text-xs text-cf-outline">
               <li>
-                <Link to="/" className="hover:text-cf-primary transition-all duration-200 flex items-center gap-1.5 group">
+                <Link 
+                  to="/#catalogue" 
+                  onClick={() => {
+                    if (window.location.pathname === '/') {
+                      const el = document.getElementById('catalogue')
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }
+                  }}
+                  className="hover:text-cf-primary transition-all duration-200 flex items-center gap-1.5 group"
+                >
                   <span className="text-[10px] text-cf-gold/60 group-hover:translate-x-0.5 transition-transform duration-200">›</span>
                   <span>Home Catalog</span>
                 </Link>

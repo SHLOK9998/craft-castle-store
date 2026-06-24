@@ -417,7 +417,7 @@ export function TermsOfServicePage() {
                   Privacy Policy
                 </Link>
                 <Link
-                  to="/"
+                  to="/#catalogue"
                   className="flex items-center gap-2 px-4 py-2 border border-cf-gold/40 text-cf-primary text-xs font-semibold rounded-lg hover:bg-cf-primary/5 transition-colors"
                 >
                   <Icon name="arrow_back" size={14} />

@@ -32,9 +32,9 @@ export function HowToOrderPage() {
     },
     {
       step: '04',
-      title: 'Confirm Adress',
+      title: 'Confirm Address',
       description: 'Share your delivery address directly with our friendly support team on chat.',
-      icon: 'address_note',
+      icon: 'location_on',
     },
     {
       step: '05',
@@ -149,7 +149,7 @@ export function HowToOrderPage() {
               Message us on WhatsApp
             </a>
             <Link
-              to="/"
+              to="/#catalogue"
               className="flex items-center gap-2 px-5 py-2.5 border border-cf-gold/40 text-cf-primary text-xs font-semibold rounded-lg hover:bg-cf-primary/5 transition-colors"
             >
               <Icon name="arrow_back" size={14} />

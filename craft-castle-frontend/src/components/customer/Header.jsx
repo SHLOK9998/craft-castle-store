@@ -29,7 +29,16 @@ export function Header({ onSearch }) {
           
           {/* Left: Logo */}
           <div className="flex items-center gap-3">
-            <Link to="/" className="flex items-center shrink-0">
+            <Link 
+              to="/" 
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault()
+                  window.location.reload()
+                }
+              }}
+              className="flex items-center shrink-0"
+            >
               <span className="font-playfair font-bold text-cf-primary dark:text-cf-gold hover:text-cf-secondary dark:hover:text-cf-saffron text-xl leading-tight tracking-wide transition-colors">
                 CraftCastle
               </span>
