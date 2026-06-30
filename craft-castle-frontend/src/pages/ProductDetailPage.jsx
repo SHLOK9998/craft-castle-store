@@ -198,7 +198,7 @@ export function ProductDetailPage() {
             </h1>
 
             {/* Price Details */}
-            <div className="flex items-center gap-3.5 mb-4 sm:mb-5">
+            <div className="flex flex-wrap items-center gap-3.5 mb-4 sm:mb-5">
               <span className="text-cf-primary dark:text-cf-gold font-bold text-2xl sm:text-3xl">₹{effectivePrice}</span>
               {hasDiscount && (
                 <>
@@ -208,6 +208,19 @@ export function ProductDetailPage() {
                   </span>
                 </>
               )}
+              <span className={`text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider ${
+                product.stock_quantity === 0
+                  ? 'bg-red-100 text-red-700 dark:bg-red-950/40 dark:text-red-300'
+                  : product.stock_quantity <= 5
+                  ? 'bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 animate-pulse'
+                  : 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300'
+              }`}>
+                {product.stock_quantity === 0 
+                  ? 'Out of Stock' 
+                  : product.stock_quantity <= 5 
+                  ? `Only ${product.stock_quantity} Left` 
+                  : `In Stock`}
+              </span>
             </div>
 
             {/* Horizontal Extra Images above the price */}
@@ -269,6 +282,61 @@ export function ProductDetailPage() {
                 Add to Cart
               </button>
             </div>
+
+            {/* Stock Availability Premium Soft Box */}
+            {product.stock_quantity > 0 && (
+              <div className="bg-[#fcf8f2] dark:bg-[#2c1e1b]/40 border border-[#e8dcd8]/85 dark:border-cf-gold/15 rounded-xl p-3.5 mb-5 flex items-center justify-between shadow-sm animate-fade-in">
+                <div className="flex items-center gap-3.5">
+                  {/* Circular Icon Container */}
+                  <div className="w-10 h-10 rounded-full bg-[#f3ebd9] dark:bg-[#1e1210] flex items-center justify-center shrink-0 border border-[#e8dcd8]/60 dark:border-cf-gold/10">
+                    <span className={`material-symbols-outlined text-[19px] ${
+                      qty === product.stock_quantity
+                        ? 'text-amber-700 dark:text-amber-500'
+                        : product.stock_quantity <= 5
+                        ? 'text-amber-700 dark:text-amber-500 animate-pulse'
+                        : 'text-cf-primary dark:text-cf-gold'
+                    }`}>
+                      {qty === product.stock_quantity
+                        ? 'inventory_2'
+                        : product.stock_quantity <= 5
+                        ? 'error'
+                        : 'local_mall'}
+                    </span>
+                  </div>
+                  
+                  {/* Text Details */}
+                  <div className="text-left">
+                    <h5 className="font-bold text-xs text-cf-primary dark:text-cf-gold leading-tight">
+                      {qty === product.stock_quantity
+                        ? 'Maximum limit reached!'
+                        : product.stock_quantity <= 5
+                        ? 'Limited stock!'
+                        : 'Good news!'}
+                    </h5>
+                    <p className="text-[11px] sm:text-xs text-cf-outline dark:text-gray-300 mt-0.5 leading-snug">
+                      {qty === product.stock_quantity ? (
+                        <>
+                          You have selected all <span className="font-bold text-amber-700 dark:text-amber-400">{product.stock_quantity} items</span> available.
+                        </>
+                      ) : product.stock_quantity <= 5 ? (
+                        <>
+                          Only <span className="font-bold text-amber-700 dark:text-amber-400">{product.stock_quantity} items</span> are left in stock.
+                        </>
+                      ) : (
+                        <>
+                          <span className="font-bold text-emerald-700 dark:text-emerald-400">{product.stock_quantity} items</span> are in stock and ready for you.
+                        </>
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right decorative emoji */}
+                <div className="text-2xl select-none pr-0.5 filter drop-shadow-sm">
+                  {qty === product.stock_quantity ? '📦' : product.stock_quantity <= 5 ? '⚠️' : '🎉'}
+                </div>
+              </div>
+            )}
 
             {/* Buy Now Button */}
             <button
